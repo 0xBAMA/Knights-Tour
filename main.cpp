@@ -15,12 +15,14 @@ int main(int argc, char** argv) {
 
   int row = atoi(argv[1]);
   int col = atoi(argv[2]);
-  if (row < 0 || row > 4 || col < 0 || col > 4) {
+  if (row < 0 || row > 7 || col < 0 || col > 7) {
     cout << "Invalid starting location" << endl;
     return 0;
   }
 
-	KnightsTour knight(5);
+	KnightsTour knight(6);
+
+    /* knight.print(); */
 
   int num_tours = knight.generate(row, col);
 	cout << "Number of tours: " << num_tours << endl;

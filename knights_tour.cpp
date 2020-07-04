@@ -7,25 +7,32 @@
 #include "knights_tour.h"
 using namespace std;
 
-KnightsTour::KnightsTour(int board_size) {
+KnightsTour::KnightsTour(int board_size) 
+{
   this->board_size = board_size ;
 
   this->board.resize(board_size);
-  for (int i = 0; i < board_size; ++i) {
+  for (int i = 0; i < board_size; ++i) 
+  {
     this->board[i].resize(board_size);
   }
 
-  for (int i = 0; i < this->board_size; i++) {
-    for (int j = 0; j < this->board_size; j++){
+  for (int i = 0; i < this->board_size; i++) 
+  {
+    for (int j = 0; j < this->board_size; j++)
+    {
       this->board[i][j] = 0;
     }
   }
 }
 
 void KnightsTour::print() {
-  for (int i = 0; i < this->board_size; i++) {
+  for (int i = 0; i < this->board_size; i++) 
+  {
     for (int j = 0; j < this->board_size; j++)
-      cout << setw(4) << this->board[i][j] << " ";
+    {
+        cout << setw(4) << this->board[i][j] << " ";
+    }
     cout << endl;
   }
   cout << endl << endl;
@@ -54,7 +61,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
   //  this is the get_moves() function - it finds all possible legal moves from the current position.
 
   //row - 2, col + 1
-  if( ((row - 2) >= 0) && ((row - 2) <= 4)  && ((col + 1) >= 0) && ((col + 1) <= 4) && (board[row - 2][col + 1] == 0 ))
+  if( ((row - 2) >= 0) && ((row - 2) <= board_size-1)  && ((col + 1) >= 0) && ((col + 1) <= board_size-1) && (board[row - 2][col + 1] == 0 ))
     {
       //cout<<endl<< "if 5";
       row_moves[num_moves] = row-2;
@@ -63,7 +70,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
 
   }
   //row -1, col + 2
-  if( ((row - 1) >= 0) && ((row - 1) <= 4)  && ((col + 2) >= 0) && ((col + 2) <= 4) && (board[row - 1][col + 2] == 0 )) 
+  if( ((row - 1) >= 0) && ((row - 1) <= board_size-1)  && ((col + 2) >= 0) && ((col + 2) <= board_size-1) && (board[row - 1][col + 2] == 0 )) 
     {
       
       //cout<<endl<< "if 1";
@@ -74,7 +81,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
     }
 
   //row + 1, col + 2
-  if( ((row + 1) >= 0) && ((row + 1) <= 4)  && ((col + 2) >= 0) && ((col + 2) <= 4) && (board[row + 1][col + 2] == 0 ))
+  if( ((row + 1) >= 0) && ((row + 1) <= board_size-1)  && ((col + 2) >= 0) && ((col + 2) <= board_size-1) && (board[row + 1][col + 2] == 0 ))
     {
       //cout<<endl<< "if 3";
       row_moves[num_moves] = row+1;
@@ -84,7 +91,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
     }
 
   //row + 2, col + 1
-  if( ((row + 2) >= 0) && ((row + 2) <= 4)  && ((col + 1) >= 0) && ((col + 1) <= 4) && (board[row + 2][col + 1] == 0 ))
+  if( ((row + 2) >= 0) && ((row + 2) <= board_size-1)  && ((col + 1) >= 0) && ((col + 1) <= board_size-1) && (board[row + 2][col + 1] == 0 ))
     {
       //cout<<endl<< "if 7";
       row_moves[num_moves] = row+2;
@@ -94,7 +101,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
     }
 
   //row + 2, col - 1
-  if( ((row + 2) >= 0) && ((row + 2) <= 4)  && ((col - 1) >= 0) && ((col - 1) <= 4) && (board[row + 2][col - 1] == 0 ))
+  if( ((row + 2) >= 0) && ((row + 2) <= board_size-1)  && ((col - 1) >= 0) && ((col - 1) <= board_size-1) && (board[row + 2][col - 1] == 0 ))
     {
       //cout<<endl<< "if 8";
       row_moves[num_moves] = row+2;
@@ -104,7 +111,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
     }
 
   //row + 1, col - 2
-  if( ((row + 1) >= 0) && ((row + 1) <= 4)  && ((col - 2) >= 0) && ((col - 2) <= 4) && (board[row + 1][col - 2] == 0 ))
+  if( ((row + 1) >= 0) && ((row + 1) <= board_size-1)  && ((col - 2) >= 0) && ((col - 2) <= board_size-1) && (board[row + 1][col - 2] == 0 ))
     {
       //cout<<endl<< "if 4";
       row_moves[num_moves] = row+1;
@@ -114,7 +121,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
     }
 
   //row - 1, col - 2
-  if( ((row - 1) >= 0) && ((row - 1) <= 4)  && ((col - 2) >= 0) && ((col - 2) <= 4) && (board[row - 1][col - 2] == 0 ))
+  if( ((row - 1) >= 0) && ((row - 1) <= board_size-1)  && ((col - 2) >= 0) && ((col - 2) <= board_size-1) && (board[row - 1][col - 2] == 0 ))
     {
 
       row_moves[num_moves] = row-1;
@@ -124,7 +131,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
     }
 
   //row - 2, col - 1
-  if( ((row - 2) >= 0) && ((row - 2) <= 4)  && ((col - 1) >= 0) && ((col - 1) <= 4) && (board[row - 2][col - 1] == 0 ))
+  if( ((row - 2) >= 0) && ((row - 2) <= board_size-1)  && ((col - 1) >= 0) && ((col - 1) <= board_size-1) && (board[row - 2][col - 1] == 0 ))
     {
       //cout<<endl<< "if 6";
       row_moves[num_moves] = row-2;
@@ -143,37 +150,44 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
 //                      row, col.
 //     int& num_tours - Total number of tours found.
 
-void KnightsTour::move(int row, int col, int& m, int& num_tours) {
+void KnightsTour::move(int row, int col, int& m, int& num_tours) 
+{
   
-  m++;//  we increment m, we've entered into move() which implies knight move will be found and taken thus increasing our move id
+    m++;//  we increment m, we've entered into move() which implies knight move will be found and taken thus increasing our move id
 	
-  int row_moves[8] = {0,0,0,0,0,0,0,0};//  we initialize our row and colom arrays
+    int row_moves[8] = {0,0,0,0,0,0,0,0};//  we initialize our row and coloumn arrays
 	int col_moves[8] = {0,0,0,0,0,0,0,0};
 
-  board[row][col] = m;//  we set the new increased m to the row and col passed into our move function
+    board[row][col] = m;//  we set the new increased m to the row and col passed into our move function
 
-  int num_moves = 0;//  we reset the move counter because we're about to find new sets of possible moves from our new current position
+    int num_moves = 0;//  we reset the move counter because we're about to find new sets of possible moves from our new current position
 
-  get_moves(row, col, row_moves, col_moves, num_moves);//  we send our new position over to get a new list of good moves to take
+    get_moves(row, col, row_moves, col_moves, num_moves);//  we send our new position over to get a new list of good moves to take
 
-  for(int i = 0; i < num_moves; i++){//  loop through the new number of possible moves found by get_moves
+    for(int i = 0; i < num_moves; i++)
+    {//  loop through the new number of possible moves found by get_moves
 
-    move(row_moves[i],col_moves[i],m,num_tours);// we send over the for loops indexed possible move to move() thus causing recursion - once go backwards through the recursion we'll increment the  the loop and go down the alternate set of moves
-    if (num_moves != 0){//  if we don't find any new possible moves we go backwards and reset each board space to 0 and decrease m each time                     
-      board[row_moves[i]][col_moves[i]] = 0;
-      m--;
+        move(row_moves[i],col_moves[i],m,num_tours);// we send over the for loops indexed possible move to move() thus causing recursion - once go backwards through the recursion we'll increment the  the loop and go down the alternate set of moves
+        if (num_moves != 0)
+        {//  if we don't find any new possible moves we go backwards and reset each board space to 0 and decrease m each time                     
+            board[row_moves[i]][col_moves[i]] = 0;
+            m--;
+        }
     }
-  }
 
-  if(m == 25){// if we detect the entire board has been traveled we print the tour
-    num_tours++;
-    print();
-    return;
-  }
+    if(m == board_size*board_size)
+    {// if we detect the entire board has been traveled we print the tour
+        num_tours++;
+        cout << " tour number " << num_tours << endl;
+        print();
+    
+        return;
+    }
 
 }
 
-int KnightsTour::generate(int row, int col) {
+int KnightsTour::generate(int row, int col) 
+{
   int m = 0;
   int num_tours = 0;
 
