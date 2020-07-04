@@ -150,7 +150,7 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
 //                      row, col.
 //     int& num_tours - Total number of tours found.
 
-void KnightsTour::move(int row, int col, int& m, int& num_tours) 
+void KnightsTour::move(int row, int col, int& m, unsigned long long int& num_tours) 
 {
   
     m++;//  we increment m, we've entered into move() which implies knight move will be found and taken thus increasing our move id
@@ -186,10 +186,10 @@ void KnightsTour::move(int row, int col, int& m, int& num_tours)
 
 }
 
-int KnightsTour::generate(int row, int col) 
+unsigned long long int KnightsTour::generate(int row, int col) 
 {
   int m = 0;
-  int num_tours = 0;
+  unsigned long long int num_tours = 0;
 
   move(row, col, m, num_tours);
 
