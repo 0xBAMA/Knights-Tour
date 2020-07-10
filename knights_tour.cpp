@@ -61,82 +61,95 @@ void KnightsTour::get_moves(int row, int col, int row_moves[], int col_moves[], 
   //  this is the get_moves() function - it finds all possible legal moves from the current position.
 
   //row - 2, col + 1
-  if( ((row - 2) >= 0) && ((row - 2) <= board_size-1)  && ((col + 1) >= 0) && ((col + 1) <= board_size-1) && (board[row - 2][col + 1] == 0 ))
+  if( ((row - 2) >= 0) && ((row - 2) <= board_size-1)  && ((col + 1) >= 0) && ((col + 1) <= board_size-1))
     {
-      //cout<<endl<< "if 5";
-      row_moves[num_moves] = row-2;
-      col_moves[num_moves] = col+1;
-      num_moves++;
+	  if(board[row - 2][col + 1] == 0 )
+	  {
+      		row_moves[num_moves] = row-2;
+      		col_moves[num_moves] = col+1;
+      		num_moves++;
+	  }
 
   }
   //row -1, col + 2
-  if( ((row - 1) >= 0) && ((row - 1) <= board_size-1)  && ((col + 2) >= 0) && ((col + 2) <= board_size-1) && (board[row - 1][col + 2] == 0 )) 
+  if( ((row - 1) >= 0) && ((row - 1) <= board_size-1)  && ((col + 2) >= 0) && ((col + 2) <= board_size-1) ) 
     {
-      
-      //cout<<endl<< "if 1";
-      row_moves[num_moves] = row-1;
-      col_moves[num_moves] = col+2;
-      num_moves++;
+	if(board[row - 1][col + 2] == 0 )
+	{
+		row_moves[num_moves] = row-1;
+		col_moves[num_moves] = col+2;
+		num_moves++;
+	}
       
     }
 
   //row + 1, col + 2
-  if( ((row + 1) >= 0) && ((row + 1) <= board_size-1)  && ((col + 2) >= 0) && ((col + 2) <= board_size-1) && (board[row + 1][col + 2] == 0 ))
+  if( ((row + 1) >= 0) && ((row + 1) <= board_size-1)  && ((col + 2) >= 0) && ((col + 2) <= board_size-1))
     {
-      //cout<<endl<< "if 3";
-      row_moves[num_moves] = row+1;
-      col_moves[num_moves] = col+2;
-      num_moves++;
+	if(board[row + 1][col + 2] == 0 )
+	{
+	      row_moves[num_moves] = row+1;
+	      col_moves[num_moves] = col+2;
+	      num_moves++;
+	}
 
     }
 
   //row + 2, col + 1
-  if( ((row + 2) >= 0) && ((row + 2) <= board_size-1)  && ((col + 1) >= 0) && ((col + 1) <= board_size-1) && (board[row + 2][col + 1] == 0 ))
+  if( ((row + 2) >= 0) && ((row + 2) <= board_size-1)  && ((col + 1) >= 0) && ((col + 1) <= board_size-1))
     {
-      //cout<<endl<< "if 7";
-      row_moves[num_moves] = row+2;
-      col_moves[num_moves] = col+1;
-      num_moves++;
+	if(board[row + 2][col + 1] == 0 )
+	{
+	      row_moves[num_moves] = row+2;
+	      col_moves[num_moves] = col+1;
+	      num_moves++;
+	}
 
     }
 
   //row + 2, col - 1
-  if( ((row + 2) >= 0) && ((row + 2) <= board_size-1)  && ((col - 1) >= 0) && ((col - 1) <= board_size-1) && (board[row + 2][col - 1] == 0 ))
+  if( ((row + 2) >= 0) && ((row + 2) <= board_size-1)  && ((col - 1) >= 0) && ((col - 1) <= board_size-1))
     {
-      //cout<<endl<< "if 8";
-      row_moves[num_moves] = row+2;
-      col_moves[num_moves] = col-1;
-      num_moves++;
+      if(board[row + 2][col - 1] == 0 )
+      {
+	      row_moves[num_moves] = row+2;
+	      col_moves[num_moves] = col-1;
+	      num_moves++;
+      }
 
     }
 
   //row + 1, col - 2
-  if( ((row + 1) >= 0) && ((row + 1) <= board_size-1)  && ((col - 2) >= 0) && ((col - 2) <= board_size-1) && (board[row + 1][col - 2] == 0 ))
+  if( ((row + 1) >= 0) && ((row + 1) <= board_size-1)  && ((col - 2) >= 0) && ((col - 2) <= board_size-1))
     {
-      //cout<<endl<< "if 4";
-      row_moves[num_moves] = row+1;
-      col_moves[num_moves] = col-2;
-      num_moves++;
-
+      if(board[row + 1][col - 2] == 0 )
+      {
+	      row_moves[num_moves] = row+1;
+	      col_moves[num_moves] = col-2;
+	      num_moves++;
+      }
     }
 
   //row - 1, col - 2
-  if( ((row - 1) >= 0) && ((row - 1) <= board_size-1)  && ((col - 2) >= 0) && ((col - 2) <= board_size-1) && (board[row - 1][col - 2] == 0 ))
+  if( ((row - 1) >= 0) && ((row - 1) <= board_size-1)  && ((col - 2) >= 0) && ((col - 2) <= board_size-1) )
     {
-
-      row_moves[num_moves] = row-1;
-      col_moves[num_moves] = col-2;
-      num_moves++;
-
+	if(board[row - 1][col - 2] == 0 )
+	{
+	      row_moves[num_moves] = row-1;
+	      col_moves[num_moves] = col-2;
+	      num_moves++;
+	}
     }
 
   //row - 2, col - 1
-  if( ((row - 2) >= 0) && ((row - 2) <= board_size-1)  && ((col - 1) >= 0) && ((col - 1) <= board_size-1) && (board[row - 2][col - 1] == 0 ))
+  if( ((row - 2) >= 0) && ((row - 2) <= board_size-1)  && ((col - 1) >= 0) && ((col - 1) <= board_size-1))
     {
-      //cout<<endl<< "if 6";
-      row_moves[num_moves] = row-2;
-      col_moves[num_moves] = col-1;
-      num_moves++;
+      if(board[row - 2][col - 1] == 0 )
+      {
+	      row_moves[num_moves] = row-2;
+	      col_moves[num_moves] = col-1;
+	      num_moves++;
+      }
 
   }
 
