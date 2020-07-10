@@ -14,4 +14,4 @@ http://gaebler.us/share/Knight_tour.html
 
   approximately 524,486 tours for a 6x6 (about 15 minutes)
 
-  letting 7x7 run overnight...
+  7x7 stopped counting at about 20 million.
